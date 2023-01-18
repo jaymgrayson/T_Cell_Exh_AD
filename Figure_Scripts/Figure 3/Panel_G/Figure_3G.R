@@ -1,0 +1,16 @@
+# Need a pretty figure for grant. Boxplot with outliers shown
+# Jason Grayson
+# 4-27-22
+
+rm(list=ls())
+library(tidyverse)
+setwd("~/Desktop/Code copy/Figure 3/Panel_G")
+load("~/Desktop/Code copy/Figure 3/Panel_G/CD4_Pep_Man_ICS.RDa")
+
+
+g1<-ggplot(df, aes(x=df$Stimulation, y=df$`IFNg GzB neg SP`)) +theme_bw()+theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))+ ggtitle("IFNg GzBneg Producing CD4+ T Cells")+theme(plot.title = element_text(size=20)) + theme(plot.title = element_text(hjust = 0.5))+geom_boxplot()
+g1<-g1+xlab("Stimulation")+ylab("% of CD45+ Cells")
+g1<-g1+theme(axis.title.x=element_blank())+theme(axis.text.x = element_text(size = 10))+theme(axis.text.y = element_text(size = 10))+theme(axis.title.y = element_text(size = 15))+theme(axis.title.y = element_text(margin = margin(r = 25)))   
+g1<-g1+facet_wrap(~df$Disease_Classifier)
+g1
+
