@@ -1,0 +1,1 @@
+For the different clusters in this plot, change the y variable in ggplot command to cluster of interest. For the radar plot use the dataframe from figure 2C (CD8_T_Surf_Data) as the input.
